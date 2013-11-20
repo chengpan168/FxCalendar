@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!-- ======================================================================= -->
+<!-- groupzone bulid by wing 2008.10.23                                      -->
+<!-- ======================================================================= -->
+
+<project name="FxCalendar" basedir=".">
+
+	<property environment="env" />
+
+	<property name="target.home" value="${basedir}/target" />
+	<property name="lib.home" value="${basedir}/lib" />
+	<property name="src.home" value="${basedir}/src/main/java" />
+	<property name="resources.home" value="${basedir}/src/main/resources" />
+	<property name="build.home" value="${target.home}/classes" />
+	<property name="dist.home" value="${basedir}/target" />
+
+	<property name="compile.debug" value="true" />
+	<property name="compile.deprecation" value="true" />
+	<property name="compile.optimize" value="false" />
+	
+	<path id="compile.classpath">
+		<pathelement location="${build.home}" />
+		<fileset dir="${lib.home}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	<target name="create_jar" depends="">
+		<jar destfile="${dist.home}/${ant.project.name}.jar" basedir="${build.home}" includes="com/**" />
+	</target>
+	
+</project>
+
